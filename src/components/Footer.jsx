@@ -10,7 +10,7 @@ const Footer = () => {
                     <p className="max-w-xl mt-6">
                       We deliver fresh groceries and snakes straight to your door. Trusted by thousand, we aim to make your shopping experience simple and affordable.
                     </p>
-                </div>
+                </div>  
                 <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
                     {footerLinks.map((section, index) => (
                         <div key={index}>
@@ -18,7 +18,7 @@ const Footer = () => {
                             <ul className="text-sm space-y-1">
                                 {section.links.map((link, i) => (
                                     <li key={i}>
-                                        <a href="#" className="hover:underline transition">{link}</a>
+                                        <a href={link.url} className="hover:underline transition">{link.text}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -26,8 +26,8 @@ const Footer = () => {
                     ))}
                 </div>
             </div>
-            <p className="py-4 text-center text-sm md:text-base text-gray-500/80">
-                Copyright 2025 © <a href="https://prebuiltui.com">PrebuiltUI</a> All Right Reserved.
+            <p className="py-4 text-center text-sm md:text-base">
+                Copyright {new Date().getFullYear()} 9xWeb.dev All Right Reserved.
             </p>
         </div>
     );
