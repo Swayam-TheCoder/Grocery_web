@@ -3,16 +3,25 @@ import { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 const Login = () => {
 
-  const {setshowuserLogin} = useAppContext()
+  const {setshowuserLogin, setuser} = useAppContext()
 
   const [state, setState] = useState("Login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+    setuser({
+      email: "test123.dev",
+      name: "Swayam"
+    })
+    setshowuserLogin(false)
+  }
+
   return (
     <div onClick={()=> setshowuserLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-30 flex justify-center items-center text-sm text-gray-600 bg-black/50'>
-      <form onClick={(e)=> e.stopPropagation()} action="" className="flex flex-col gap-4 m-auto item-start p-8 py-12 w-80 sm:w-md rounded-lg shadow-xl border border-gray-200 bg-white">
+      <form onSubmit={onSubmitHandler} onClick={(e)=> e.stopPropagation()} action="" className="flex flex-col gap-4 m-auto item-start p-8 py-12 w-80 sm:w-md rounded-lg shadow-xl border border-gray-200 bg-white">
         <p className='text-2xl font-medium m-auto'>
           <span className='text-primary'>User</span> {state === "Login" ? "Login" : "Sign Up"}
         </p>
