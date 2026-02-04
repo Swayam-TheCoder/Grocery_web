@@ -18,7 +18,7 @@ export const AppContextProvider = ({children}) =>{
   const [ cartitem, setcartitems ] = useState({})
 
   //Fetch all products
-  const fetchProducts = async ()=>{ 
+  const fetchProducts = async ()=>{
     setproducts(dummyProducts)
   }
 
