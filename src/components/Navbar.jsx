@@ -42,7 +42,7 @@ const Navbar = () => {
                     <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-4 h-4 rounded-full">3</button>
                 </div>
 
-                {!user ? (<button onClick={()=>setshowuserLogin(true)} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary transition text-white rounded-full">
+                {!user ? (<button onClick={()=>setshowuserLogin(true)} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-full">
                     Login
                 </button>)
                 : (
@@ -75,11 +75,11 @@ const Navbar = () => {
                     <button onClick={()=>{
                         setOpen(false) 
                         setshowuserLogin(true)
-                    }} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary transition text-white rounded-full text-sm">
+                    }} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm">
                     Login
                 </button>
                 ) : (
-                    <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary transition text-white rounded-full text-sm">
+                    <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm">
                     Logout
                 </button>
                 )}
